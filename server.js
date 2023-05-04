@@ -10,7 +10,7 @@ function rockPaperScissors() {
     const scissors = "Scissors";
 
     let computerTurn = "";
-    let game = 1;
+    let round = 1;
     let playerScore = 0;
     let computerScore = 0;
 
@@ -43,12 +43,12 @@ function rockPaperScissors() {
 
     let recursiveAsyncReadLine = function () {
 
-        if (game > 10) {
+        if (round > 10) {
             endgame();
             return;
         }
 
-        console.log(`Game: ${game}   Score: Player - ${playerScore} Computer - ${computerScore}`);
+        console.log(`Round: ${round}   Score: Player - ${playerScore} Computer - ${computerScore}`);
 
         readline.question("\nWhat is your choice - Rock, Paper, Scissors, ? (r,p,s) ", playerTurn => {
             if (playerTurn == "r" || playerTurn == "rock") {
@@ -85,7 +85,7 @@ function rockPaperScissors() {
 
             }
 
-            game++;
+            round++;
             recursiveAsyncReadLine();
 
         });
